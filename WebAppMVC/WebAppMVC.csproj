@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>WebAppMVC</RootNamespace>
+    <Authors>WimmerB</Authors>
+    <AssemblyName>WebAppMVC</AssemblyName>
+    <PackageId>WebAppMVC</PackageId>
+    <Company>DHBW Heidenheim</Company>
+    <Product>WebAppMVC</Product>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DBBooks\DBBooks.csproj" />
+  </ItemGroup>
+
+</Project>

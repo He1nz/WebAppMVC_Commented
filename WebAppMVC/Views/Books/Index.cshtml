@@ -1,0 +1,64 @@
+﻿@model ListModelBooks
+
+<h2>Bücher der Datenbank:</h2>
+
+@*Tabellenseite mit den Aktuellen Buechern wird erstellt*@
+<div style="width:40%; display: inline-block">
+    <h3>Aktuelle Bücher</h3>
+    <table class="table table-hover mb-0">
+    <thead>
+        <tr>
+            <td>Titel</td>
+            <td>Autor</td>
+            <td>In andere Tabelle verschieben</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model.CurrentBooksList)
+        {
+            <tr>
+                <td>
+                    @book.Titel
+                </td>
+                <td>
+                    @book.Author
+                </td>
+                <td>
+                    @Html.ActionLink("Verschieben", "Buch archivieren", "Bücher", book)
+                </td>
+            </tr>
+        }
+    </tbody>
+    </table>
+</div>
+
+@*Tabellenseite mit den Archivierten Buechern wird erstellt*@
+<div style="width:40%; display: inline-block">
+    <h3>Archivierte Bücher</h3>
+    <table class="table table-hover mb-0">
+        <thead>
+            <tr>
+                <td>Titel</td>
+                <td>Autor</td>
+                <td>In andere Tabelle verschieben</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in Model.ArchivedBooksList)
+            {
+                <tr>
+                    <td>
+                        @book.Titel
+                    </td>
+                    <td>
+                        @book.Author
+                    </td>
+                    <td>
+                        @Html.ActionLink("Verschieben", "Buch aktivieren", "Bücher", book)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
